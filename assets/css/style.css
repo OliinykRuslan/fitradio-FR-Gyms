@@ -1,0 +1,2061 @@
+@font-face {
+    font-family: Bebas Thin;
+    src: url(../fonts/BebasNeueThin.otf) format("opentype"), url(../fonts/BebasNeueThin.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Bebas Regular;
+    src: url(../fonts/BebasNeueRegular.otf) format("opentype"), url(../fonts/BebasNeueRegular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Bebas Bold;
+    src: url(../fonts/BebasNeueBold.otf) format("opentype"), url(../fonts/BebasNeueBold.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(../fonts/Montserrat-Light.eot);
+    src: local("../fonts/Montserrat-Light"), local("../fonts/Montserrat-Light"), url(../fonts/Montserrat-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/Montserrat-Light.woff2) format("woff2"), url(../fonts/Montserrat-Light.woff) format("woff"), url(../fonts/Montserrat-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../fonts/Montserrat-Regular.eot);
+    src: local("../fonts/Montserrat-Regular"), local("../fonts/Montserrat-Regular"), url(../fonts/Montserrat-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Montserrat-Regular.woff2) format("woff2"), url(../fonts/Montserrat-Regular.woff) format("woff"), url(../fonts/Montserrat-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url(../fonts/Montserrat-SemiBold.eot);
+    src: local("../fonts/Montserrat-SemiBold"), local("../fonts/Montserrat-SemiBold"), url(../fonts/Montserrat-SemiBold.eot?#iefix) format("embedded-opentype"), url(../fonts/Montserrat-SemiBold.woff2) format("woff2"), url(../fonts/Montserrat-SemiBold.woff) format("woff"), url(../fonts/Montserrat-SemiBold.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../fonts/Montserrat-Bold.eot);
+    src: local("../fonts/Montserrat-Bold"), local("../fonts/Montserrat-Bold"), url(../fonts/Montserrat-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Montserrat-Bold.woff2) format("woff2"), url(../fonts/Montserrat-Bold.woff) format("woff"), url(../fonts/Montserrat-Bold.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Montserrat-Italic;
+    src: url(../fonts/Montserrat-Italic.eot);
+    src: local("../fonts/Montserrat-Bold"), local("../fonts/Montserrat-Bold"), url(../fonts/Montserrat-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/Montserrat-Italic.woff2) format("woff2"), url(../fonts/Montserrat-Italic.woff) format("woff"), url(../fonts/Montserrat-Italic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+.active-menu {
+    max-height: 100vh;
+    overflow: hidden;
+}
+.navbar-wrapper {
+    z-index: 20;
+    position: relative;
+}
+@media (max-width:991px) {
+    .navbar-wrapper {
+    margin-bottom: 0;
+    top: 20px;
+}
+}.navbar-wrapper .logo {
+    display: flex;
+}
+.header {
+    position: relative;
+}
+.header .logo {
+    padding-right: 0;
+    width: 100%;
+    max-width: 220px;
+}
+@media (max-width:480px) {
+    .header .logo {
+    max-width: 170px;
+}
+}.head-menu {
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%}
+.head-menu, .list-menu {
+    display: flex;
+    align-items: center;
+}
+.list-menu {
+    margin: 0 0 0 auto;
+    justify-content: flex-end;
+}
+.list-menu .nav-item {
+    line-height: 2.5;
+    font-size: 14px;
+    position: relative;
+    padding: 13px 31px;
+}
+@media (min-width:992px) {
+    .list-menu .nav-item:not(:last-child) {
+    padding: 17px 22px;
+}
+}@media only screen and (max-width:767px) {
+    .list-menu .nav-item {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+}.list-menu li {
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-family: Montserrat-SemiBold, sans-serif;
+}
+.list-menu li.white a {
+    color: #fff;
+}
+.list-menu li a {
+    color: #272c30;
+    cursor: pointer;
+    transition: all .5s;
+}
+.list-menu li a.is-active {
+    color: #e88140;
+    position: relative;
+}
+@media only screen and (max-width:767px) {
+    .list-menu li a.is-active::after {
+    content: "";
+    position: absolute;
+    background-color: #e88140;
+    width: 8px;
+    height: calc(100% + 3px);
+    left: -31px;
+    top: -3px;
+}
+}.list-menu li a:hover {
+    opacity: .7;
+}
+.list-menu .btn {
+    padding: 10px 17px;
+    font-size: 12px;
+}
+@media only screen and (max-width:767px) {
+    .list-menu .btn {
+    padding: 15px 0 13px;
+    font-size: 16px;
+    max-width: 335px;
+    margin: auto;
+    margin-top: 267px;
+}
+}.logo-mob {
+    max-width: 70%}
+@media only screen and (min-width:992px) {
+    .logo-mob {
+    display: none;
+}
+}@media only screen and (max-width:991px) {
+    .logo-mob {
+    padding: 24px 21px 22px;
+}
+}.header_btn {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 18px;
+    height: 12px;
+}
+.header_btn span {
+    height: 2px;
+    position: absolute;
+}
+.bit-1 {
+    width: 100%;
+    top: 0;
+    right: 0;
+}
+.bit-1:before {
+    left: 0;
+    transform-origin: left bottom;
+}
+.bit-1:after, .bit-1:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(50% + 1px);
+    background: #fff;
+    top: 0;
+    transition: transform .1s, top .1s;
+}
+.bit-1:after {
+    right: 0;
+    transform-origin: right bottom;
+}
+.bit-2 {
+    top: calc(50% - 1px);
+    right: 0;
+    width: 10px;
+    left: auto;
+}
+.bit-2:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: inline-block;
+    vertical-align: top;
+    transition: width .1s;
+    transition-delay: .1s;
+}
+.bit-3 {
+    width: 18px;
+    bottom: 0;
+    right: 0;
+}
+.bit-3:before {
+    right: 0;
+    transform-origin: left top;
+}
+.bit-3:after, .bit-3:before {
+    content: "";
+    position: absolute;
+    width: calc(50% + 1px);
+    height: 100%;
+    background: #fff;
+    transition: transform .1s, bottom .1s;
+    bottom: 0;
+}
+.bit-3:after {
+    right: 2px;
+    transform-origin: right top;
+}
+.opened .header_btn {
+    width: 12px;
+    height: 12px;
+}
+.opened .bit-1 {
+    width: 100%;
+    right: 0;
+}
+.opened .bit-1:before {
+    transform: rotate(45deg);
+    transition-delay: .2s;
+}
+.opened .bit-1:after, .opened .bit-1:before {
+    top: 0;
+}
+.opened .bit-1:after {
+    transition-delay: .2s;
+    transform: rotate(-45deg);
+}
+.opened .bit-2:before {
+    width: 0;
+    transition-delay: 0;
+}
+.opened .bit-3 {
+    width: 100%;
+    right: 0;
+}
+.opened .bit-3:before {
+    transform: rotate(-45deg);
+    left: 0;
+}
+.opened .bit-3:after, .opened .bit-3:before {
+    transition-delay: .2s;
+}
+.opened .bit-3:after {
+    transform: rotate(45deg);
+    right: 0;
+}
+.navbar-toggler {
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 12;
+    background-color: transparent;
+    width: 38px;
+    height: 38px;
+}
+.navbar-toggler:focus {
+    outline: none;
+}
+.navbar-wrapper-list {
+    display: flex;
+    align-items: center;
+    width: 100%}
+.custom_navbar {
+    display: flex;
+    background-color: #514d4d;
+    border-radius: 50%;
+    z-index: 12;
+}
+@media (min-width:992px) {
+    .custom_navbar {
+    display: none;
+}
+}@media only screen and (max-width:991px) {
+    .list-menu {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: block;
+    position: fixed;
+    transition: all .5s;
+    top: 0;
+    right: -500px;
+    width: 40%;
+    z-index: 11;
+    padding: 0;
+}
+.list-menu li {
+    margin: 0;
+}
+.list-menu li.wrap-btn {
+    max-width: 146px;
+    margin: auto;
+}
+.list-menu li a {
+    color: #fff;
+}
+.menu-open {
+    right: 0;
+    top: 0;
+    position: fixed;
+}
+}@media only screen and (max-width:991px) and (max-width:991px) {
+    .menu-open {
+    min-width: 40%}
+}@media only screen and (max-width:991px) and (max-width:767px) {
+    .menu-open {
+    min-width: 100%}
+}
+
+
+
+
+.fitRadio {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    padding-bottom: 280px;
+}
+.fitRadio .fitRadioBackground {
+    padding-top: 135px;
+    width: 100vw;
+    height: calc(100% - 280px);
+    position: absolute;
+}
+.fitRadio .fitRadioBackground .background {
+    z-index: 1;
+    content: "";
+    display: inline-block;
+    width: 200%;
+    height: calc(100% - 180px);
+    background: #000;
+    position: absolute;
+    transform: rotate(-7deg);
+    margin-left: -50%}
+.fitRadio .fitRadioBlock {
+    padding: 160px 0;
+    padding-top: 0;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fitRadio .fitRadioBlock .fitRadioText {
+    padding:  200px 0 0;
+    max-width: 512px;
+    margin-right: 126px;
+}
+.fitRadio .fitRadioBlock .fitRadioText .logo {
+    margin-bottom: 10px;
+}
+.fitRadio .fitRadioBlock .fitRadioText h2 {
+    font-family: Bebas Bold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 14px;
+}
+.fitRadio .fitRadioBlock .fitRadioText h2 span {
+    color: #e88140;
+}
+.fitRadio .fitRadioBlock .fitRadioText .about {
+    font-family: Montserrat-Regular, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.fitRadio .fitRadioBlock .fitRadioText ul {
+    padding-left: 53px;
+    list-style-image: url(../../assets/images/icon-check.svg);
+}
+.fitRadio .fitRadioBlock .fitRadioText ul li {
+    font-family: Montserrat-Regular, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.fitRadio .fitRadioBlock .fitRadioText a.button {
+    color: #fff;
+    width: 300px;
+    height: 50px;
+    background-color: #e88140;
+    font-family: Montserrat-Bold;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 100px;
+    margin-top: 20px;
+    transition: .3s;
+}
+.fitRadio .fitRadioBlock .fitRadioText a.button:hover {
+    background-color: #272c30;
+}
+.fitRadio .fitRadioBlock .phone {
+    margin-top: 25px;
+    border-radius: 57px;
+}
+@media (max-width:1200px) {
+    .fitRadio .fitRadioBlock {
+        padding:  140px 0 100px;
+    }
+    .fitRadio .fitRadioBlock .fitRadioText {
+        max-width: 400px;
+        margin-right: 40px;
+        padding:  80px 0 0;
+    }
+    .fitRadio .fitRadioBlock .phone img {
+        max-width: 280px;
+    }
+}
+@media (max-width:768px) {
+    .fitRadio {
+        margin-top: -160px;
+    }
+    .fitRadio .fitRadioBackground {
+        width: 100%
+    }
+    .fitRadio .fitRadioBackground .background {
+        width: 300%
+    }
+    .fitRadio .fitRadioBlock {
+        padding:  180px 0 80px;
+    }
+    .fitRadio .fitRadioBlock .fitRadioText {
+        margin: 0;
+        max-width: 90%
+    }
+    .fitRadio .fitRadioBlock .fitRadioText h2 {
+        font-size: 62px;
+        line-height: 90%
+    }
+    .fitRadio .fitRadioBlock .fitRadioText a.button {
+        width: 276px;
+    }
+    .fitRadio .fitRadioBlock .phone {
+        display: none;
+    }
+}
+.forgymsTrainers {
+    margin-top: -400px;
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    padding-bottom: 260px;
+}
+.forgymsTrainers::before {
+    z-index: 1;
+    content: "";
+    display: inline-block;
+    width: 200%;
+    height: calc(100% - 120px);
+    background: #0E0F12;
+    position: absolute;
+    transform: rotate(-4.6deg);
+    margin-left: -50%;
+    top: 35px;
+    left: 0;
+}
+.forgymsTrainers .forgymsTrainersBlock {
+    padding: 280px 0;
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText {
+    max-width: 400px;
+    text-align: center;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText .section-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 11px;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText .pro {
+    color: #f5a623;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(235, 167, 70, .2);
+    border-radius: 2px;
+    font-family: Montserrat-SemiBold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 22px;
+    width: 35px;
+    height: 22px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+.additional-services .fitRadioBlock .section-title,
+.forgymsTrainers .forgymsTrainersBlock .section-title {
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+.forgymsTrainers .forgymsTrainersBlock .section-title {
+    color: #fff;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText .about {
+    font-family: Montserrat-Regular, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 36px;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText ul {
+    padding-left: 50px;
+    list-style-image: url(../../assets/images/icon-check.svg);
+    text-align: left;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText ul li {
+    font-family: Montserrat-Regular, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText a.button {
+    color: #fff;
+    width: 300px;
+    height: 50px;
+    background-color: #e88140;
+    display: inline-block;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 100px;
+    margin-top: 20px;
+    transition: .3s;
+    font-family: Montserrat-Bold;
+    font-weight: 700;
+}
+.forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText a.button:hover {
+    background-color: #272c30;
+}
+.forgymsTrainers .forgymsTrainersBlock .phone {
+    margin-top: 0;
+    border-radius: 57px;
+    margin-left: -20px;
+}
+@media (max-width:1200px) {
+    .forgymsTrainers .forgymsTrainersBlock {
+        padding: 200px 0;
+        padding-top: 160px;
+    }
+    .forgymsTrainers .forgymsTrainersBlock .phone img {
+        max-width: 280px;
+    }
+}
+@media (max-width:767px) {
+    .forgymsTrainers {
+        margin-top: -535px;
+    }
+    .forgymsTrainers .forgymsTrainersBlock {
+        padding:  350px 0 100px;
+    }
+    .forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText h2 {
+        font-size: 56px;
+        line-height: 90%;
+    }
+    .forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText a.button {
+        width: 276px;
+        display: block;
+        margin: 0 auto;
+    }
+    .gyms-studios .forgymsTrainers .phone,
+    .gyms-studios .additional-services .phone {
+        display: none;
+    }
+}
+
+.footer {
+    background: #0e0f12;
+    padding-top: 70px;
+}
+.footer .footerContent {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .footerContent .footerSocial .logo {
+    margin-bottom: 32px;
+}
+.footer .footerContent .footerSocial .socialLinks a {
+    margin-right: 12px;
+}
+.footer .footerContent h6 {
+    font-family: Montserrat-Bold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.footer .footerContent .footerList {
+    display: flex;
+    flex-direction: column;
+}
+.footer .footerContent .footerList a {
+    font-family: Montserrat-Regular, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    opacity: .7;
+    margin-bottom: 10px;
+}
+.footer .footerContent .footersApp {
+    display: flex;
+    flex-direction: column;
+    margin-right: 33px;
+}
+.footer .footerContent .footersApp img {
+    width: 135px;
+    border: 1px solid #a6a6a6;
+    border-radius: 6px;
+    margin-bottom: 19px;
+}
+.footer .copyright {
+    border-top: 1px solid hsla(0, 0%, 100%, .12);
+    margin-top: 55px;
+    text-align: center;
+    padding: 32px;
+    line-height: 16px;
+    opacity: .7;
+    color: #fff;
+    text-transform: uppercase;
+}
+.footer .copyright h6 {
+    font-family: Montserrat-Light, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+@media (max-width:768px) {
+    .footer {
+        padding: 0;
+    }
+    .footer .footerContent {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .footer .footerContent .footerList, .footer .footerContent .footerSocial {
+        margin-bottom: 20px;
+    }
+    .footer .copyright {
+        margin: 0;
+    }
+}
+*, :after, :before {
+    box-sizing: border-box;
+    outline: none!important;
+}
+embed, iframe, object {
+    border: none;
+    width: 100%}
+input, textarea {
+    -webkit-appearance: none;
+}
+img {
+    image-orientation: from-image;
+}
+body, html {
+    background-color: #fff;
+    max-width: 100%;
+    position: relative;
+    font-family: Montserrat-Regular, sans-serif;
+}
+body {
+    color: #4a4a4a;
+}
+body, body.page {
+    margin: 0;
+}
+a, a:focus, a:hover {
+    color: inherit;
+    transition: all .5s;
+    text-decoration: none;
+    outline: none;
+}
+.btn, .btn:hover, button, button:hover {
+    transition: all .25s;
+    outline: none;
+    line-height: 1;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.title {
+    font-family: Bebas Regular;
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 1;
+    letter-spacing: 3px;
+    margin: 0;
+}
+@media (max-width:991px) {
+    .title {
+    font-size: 90px;
+}
+}@media (max-width:767px) {
+    .title {
+    font-size: 70px;
+}
+}@media (max-width:480px) {
+    .title {
+    font-size: 60px;
+    margin: 8px 0 0;
+}
+}
+.orange-gradient-txt {
+    color: linear-gradient(135deg, #fcbb48, #dc603b);
+    background: linear-gradient(135deg, #fcbb48, #dc603b);
+    color: #0b2349;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.sub-title {
+    font-family: Bebas Thin;
+    font-size: 48px;
+    color: #272c30;
+    letter-spacing: 7px;
+    line-height: 1;
+    margin: 0;
+}
+@media (max-width:991px) {
+    .sub-title {
+    font-size: 42px;
+    margin: 20px 0 0;
+}
+}@media (max-width:767px) {
+    .sub-title {
+    font-size: 36px;
+}
+}@media (max-width:480px) {
+    .sub-title {
+    font-size: 30px;
+}
+}.section-title {
+    color: #272c30;
+    font-size: 80px;
+    font-family: Bebas Bold;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #4b4b4b;
+    font-family: Montserrat-SemiBold;
+    padding: 16px 15px;
+    max-width: max-content;
+    border-radius: 2rem;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 50px;
+    font-size: 16px;
+}
+.btn.btn-orange {
+    background-color: #e88140;
+    color: #fff;
+}
+.btn .btn-ico {
+    margin-right: 5px;
+}
+.active-menu .overlay {
+    content: "";
+    background: rgba(0, 0, 0, .1);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.text-center {
+    text-align: center;
+}
+.dark-bg {
+    background-color: #0e0f12;
+}
+.orange {
+    color: #e88140;
+}
+.container {
+    position: relative;
+    z-index: 2;
+}
+@media (min-width:1200px) {
+    .container {
+        max-width: 1130px;
+    }
+}
+.content {
+    width: 1110px;
+    margin: auto;
+}
+@media (max-width:1200px) {
+    .content {
+        width: 750px;
+        margin: auto;
+    }
+}
+@media (max-width:768px) {
+    .content {
+        width: 100%
+    }
+}
+.mobile {
+    display: none;
+}
+@media (max-width:768px) {
+    .content {
+        width: 100%
+    }
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: inline-block;
+    }
+}
+
+/* gyms-studios */
+
+.gyms-studios .section-subtitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-family: "Montserrat-SemiBold";
+    color: #5E6469;
+}
+.gyms-studios .section-title {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 0px;
+    margin: 0 auto 8px;
+    color: #000;
+}
+.gyms-studios .about {
+    font-family: 'Montserrat-Regular';
+    font-size: 14px;
+    color: #272C30;
+}
+
+/* section hero */
+
+.section-hero {
+    position: relative;
+    background: url("../images/gyms-studios/hero-gyms-studios.png") no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.section-hero::before {
+    content: '';
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    transform: skewY(6deg);
+    bottom: -170px;
+}
+.hero-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 150px;
+    padding-bottom: 160px;
+}
+.gyms-studios .section-hero .section-title {
+    font-size: 62px;
+    letter-spacing: 0.02em;
+    margin: 0 0 35px;
+    line-height: 1;
+    text-align: center;
+}
+.gyms-studios .section-hero .section-subtitle {
+    color: #ffffff;
+    font-family: "Bebas Bold";
+    letter-spacing: 0.13em;
+    font-size: 32px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.section-subtitle .pro {
+    color: #ffffff;
+    display: inline-block;
+    background: linear-gradient(135deg, #FCBB48 0%, #DC603B 100%);
+    border-radius: 8px;
+    transform: rotate(0.41deg);
+    font-family: "Montserrat-SemiBold";
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    padding: 6px;
+    margin-left: 5px;
+    letter-spacing: 0;
+}
+.upgrade-wrap .pricing-item-wrap {
+    background: #0E0F12;
+    box-shadow: 16px 16px 40px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 428px;
+    padding: 50px 32px 64px;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    margin: 0 auto;
+}
+.upgrade-wrap .pricing-item .item-price {
+    color: #fff;
+    font-family: "Bebas Bold";
+    font-size: 24px;
+    line-height: 1;
+    margin: 0 0 14px;
+}
+.upgrade-wrap .pricing-item .pricing-title {
+    color: #fff;
+    font-family: 'Bebas Bold';
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+.upgrade-wrap .pricing-item .item-price .digit {
+    font-size: 52px;
+}
+.upgrade-wrap .pricing-item .item-text {
+    font-size: 24px;
+    color: #F5A623;
+    font-family: "Bebas Bold";
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+.upgrade-wrap .btn {
+    margin: 0 auto;
+}
+.upgrade-wrap .small-text {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 10px;
+    margin: 25px auto 0;
+    max-width: 275px;
+    letter-spacing: 1.5px;
+    line-height: 1.35;
+}
+
+/* experience section */
+
+.experience-section {
+    padding: 85px 0 0;
+    background: url("../images/gyms-studios/outline-logo.svg") no-repeat;
+    background-position: 4% 0;
+    background-size: contain;
+    text-align: center;
+    position: relative;
+    margin-top: -154px;
+}
+.gyms-studios .experience-section .section-title {
+    text-align: center;
+}
+.gyms-studios .experience-section .about {
+    max-width: 540px;
+    margin: 0 auto 35px;
+}
+.gyms-studios .title-item + .about {
+    margin: 0 0 25px;
+}
+.experience-section .about span {
+    font-family: "Montserrat-Bold";
+}
+.experience-section .title-item {
+    color: #14171D;
+    font-family: "Bebas Bold";
+    font-size: 28px;
+    margin: 5px 0 12px;
+}
+
+/* forgymsTrainers section */
+
+.gyms-studios .forgymsTrainers {
+    margin: 0;
+    padding-bottom: 50px;
+}
+.gyms-studios .forgymsTrainers .forgymsTrainersBlock {
+    padding: 100px 0;
+}
+
+/* additional-services */
+
+.additional-services{
+    color: #272C30;
+}
+.additional-services .fitRadioBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.additional-services .fitRadioBlock .fitRadioText {
+    max-width: 400px;
+}
+.additional-services .fitRadioBlock .fitRadioText .about {
+    line-height: 1.4;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.additional-services .fitRadioBlock .fitRadioText ul {
+    padding-left: 53px;
+    list-style-image: url("../../assets/images/icon-check.svg");
+    margin-bottom: 40px;
+}
+.additional-services .fitRadioBlock .fitRadioText ul li {
+    font-family: "Montserrat-SemiBold";
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* music-experience */
+
+.music-experience {
+    padding: 75px 0 35px;
+}
+.music-experience .inner-wrap {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    grid-column-gap: 0px;
+    grid-row-gap: 70px;
+}
+.music-experience .about-wrap {
+    text-align: center;
+    max-width: 507px;
+}
+.gyms-studios .music-experience .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.gyms-studios .inner-wrap .section-title {
+    margin-bottom: 15px;
+}
+.music-experience .inner-wrap .btn {
+    margin: 0 auto;
+}
+
+/* slider */
+
+.testimonials-section {
+    padding: 50px 0 0;
+    background: url("../images/gyms-studios/outline-logo.svg") no-repeat;
+}
+.testimonials-section .section-subtitle {
+    text-align: center;
+}
+.gyms-studios .testimonials-section .section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.testimonials-section .slider-item {
+    background-color: #fff;
+    border: 1px solid #EAE9E9;
+    border-radius: 3px;
+    padding: 32px;
+}
+.testimonials-slider .txt {
+    font-family: 'Montserrat-Italic';
+    font-weight: 500;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+.testimonials-autor {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #EAE9E9;
+    padding-top: 24px;
+}
+.testimonials-autor .autor {
+    display: flex;
+}
+.testimonials-section .slick-slide { 
+    margin: 0 10px;
+}
+.autor-col {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+}
+.testimonials-section .autor-name {
+    font-family: "Bebas Bold";
+    font-size: 20px;
+    color: #272C30;
+    margin: 0;
+}
+.testimonials-section .autor-position {
+    font-family: "Montserrat-Regular";
+    font-size: 12px;
+    margin: 0;
+}
+.testimonials-section .slick-dots {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	list-style-type: none;
+}
+.testimonials-section .slick-dots li {
+    margin: 0 0.25rem;
+}
+.testimonials-section .slick-dots li button {
+    display: block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    background-color: #E88140;
+    opacity: 0.25;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+.testimonials-section .slick-dots li.slick-active button {
+    opacity: 1;
+}
+
+/* royalties-solution section */
+
+.royalties-solution {
+    padding: 80px 0 15px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+.royalties-solution::before {
+    z-index: 1;
+    content: "";
+    display: inline-block;
+    width: 200%;
+    height: 120%;
+    background: #0E0F12;
+    position: absolute;
+    transform: rotate(4.6deg);
+    margin-left: -50%;
+    top: 80px;
+    left: 0;
+}
+.royalties-solution .section-title {
+    font-family: "Bebas Bold";
+    font-size: 32px;
+    line-height: 1.14;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+.royalties-solution .section-subtitle {
+    color: #E88140;
+    font-size: 14px;
+    margin-bottom: 17px;
+    text-align: center;
+}
+.royalties-solution .about {
+    color: #fff;
+    font-size: 14px;
+    padding-top: 15px;
+    margin: 0;
+    text-align: center;
+}
+.royalties-solution .row-item {
+    padding: 35px 0;
+}
+.royalties-solution .row-item + .row-item {
+    border-top: 1px solid #444444;
+}
+.royalties-solution .btn {
+    margin: 15px auto 10px;
+}
+
+/* FAQ */
+
+.faq-wrap {
+    position: relative;
+    padding: 35px 0 50px;
+}
+.faq-wrap .head-holder {
+    margin: 0 auto 35px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.faq-wrap .section-subtitle {
+    color: #E88140;
+    font-size: 14px;
+}
+.faq-wrap .section-title {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.faq-wrap .about {
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+}
+.faq-wrap .faq-items {
+    width: 100%;
+    max-width: 948px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.faq-wrap .panel {
+    border: 0;
+    background: rgba(39, 44, 48, 0.25);
+    margin-bottom: 8px;
+}
+.faq-wrap .panel-heading {
+    background-color: transparent;
+    padding: 0;
+}
+.faq-wrap .panel-title {
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    position: relative;
+    margin: 0;
+}
+.faq-wrap .panel-title a {
+    color: #F5A623;
+    display: block;
+    padding: 25px 60px 25px 25px;
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .faq-wrap .panel-title a {
+        font-size: 14px; 
+    }
+}
+.faq-wrap .collapse.in {
+    display: block;
+}
+.faq-wrap .panel-title a.collapsed {
+    color: #fff;
+}
+.faq-wrap .panel-title a.collapsed::after {
+    display: block;
+}
+.faq-wrap .panel-title a.collapsed::after,
+.faq-wrap .panel-title a.collapsed::before {
+    background-color: #fff;
+}
+.faq-wrap .panel-title a::before, 
+.faq-wrap .panel-title a::after {
+    content: '';
+    background-color: #F5A623;
+    position: absolute;
+    right: 30px;
+    top: calc(50% - 1px);
+    height: 2px;
+    width: 14px; 
+}
+.faq-wrap .panel-title a::after {
+    transform: rotate(90deg);
+    display: none; 
+}
+.faq-wrap .panel-body {
+    color: #fff;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    padding: 0 40px 25px; 
+}
+@media (max-width: 767px) {
+    .faq-wrap .panel-body {
+        font-size: 14px;
+        padding: 0 25px 25px;
+    }
+}
+.faq-wrap .panel-body h6 {
+    font-size: 16px;
+    margin: 15px 0 10px; 
+}
+.faq-wrap .panel-body p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0; 
+}
+@media (max-width: 767px) {
+    .faq-wrap .panel-body p {
+        font-size: 14px; 
+    }
+}
+.faq-wrap .panel-body a {
+    text-decoration: underline; 
+}
+
+/* contact section */
+
+.contact-wrap {
+    padding: 35px 0 0;
+    background-image: url("../images/outline-logo.svg");
+    background-position: 4% 0%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.contact-wrap::before {
+    content: '';
+    display: block;
+    background: #E88140;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    transform: skewY(-2deg);
+    top: calc(100% - 90px);
+}
+.contact-wrap .contact-description {
+    max-width: 485px;
+    text-align: center;
+    margin: 0 auto 35px;
+}
+.contact-wrap .section-title {
+    color: #fff;
+    margin: 0 0 19px;
+}
+@media (min-width: 992px) {
+    .contact-wrap .section-title {
+        font-size: 56px;
+        margin: 0 0 20px;
+        text-align: left;
+    }
+    .contact-wrap .contact-description {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+    }
+}
+.line-break {
+    display: block;
+}
+.contact-wrap .more-btn {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    border: 1px solid #fff;
+    border-radius: 0;
+    padding: 15px 33px 15px 20px;
+    margin: 35px 0;
+    letter-spacing: 0;
+}
+@media (min-width: 992px) {
+    .contact-wrap .more-btn {
+        font-size: 18px;
+        padding: 22px 33px 22px 20px;
+        margin: 43px 0 93px;
+    }
+}
+.contact-wrap .more-btn:hover {
+    color: #ffb636;
+    border: 1px solid #ffb636;
+}
+.contact-wrap .more-btn .img-ico {
+    max-width: 7px;
+    max-height: 12px;
+    fill: #fff;
+    transition: all .25s;
+    margin-left: 15px;
+}
+.contact-wrap .more-btn:hover .img-ico {
+    fill: #ffb636;
+}
+.contact-wrap .about {
+    color: #fff;
+    font-size: 18px;
+}
+@media (min-width: 992px) {
+    .contact-wrap .about {
+        max-width: 400px;
+    }
+}
+.contact-description a {
+    color: #fff;
+    font-size: 16px;
+}
+.contact-description a:hover {
+    color: #ffb636;
+}
+.contact-form {
+    background-color: #fff;
+    width: 100%;
+    max-width: 497px;
+    margin: 0 auto;
+    padding: 35px 25px;
+}
+.contact-form select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 1.5ex;
+    background-origin: content-box;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0ic3ZnMiIKICAgdmlld0JveD0iMCAwIDM1Ljk3MDk4MyAyMy4wOTE1MTgiCiAgIGhlaWdodD0iNi41MTY5Mzk2bW0iCiAgIHdpZHRoPSIxMC4xNTE4MTFtbSI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjAyLjAxNDUxLC00MDcuMTIyMjUpIgogICAgIGlkPSJsYXllcjEiPgogICAgPHRleHQKICAgICAgIGlkPSJ0ZXh0MzMzNiIKICAgICAgIHk9IjYyOS41MDUwNyIKICAgICAgIHg9IjI5MS40Mjg1NiIKICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zaXplOjQwcHg7bGluZS1oZWlnaHQ6MTI1JTtmb250LWZhbWlseTpzYW5zLXNlcmlmO2xldHRlci1zcGFjaW5nOjBweDt3b3JkLXNwYWNpbmc6MHB4O2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MXB4O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4KICAgICAgICAgeT0iNjI5LjUwNTA3IgogICAgICAgICB4PSIyOTEuNDI4NTYiCiAgICAgICAgIGlkPSJ0c3BhbjMzMzgiPjwvdHNwYW4+PC90ZXh0PgogICAgPGcKICAgICAgIGlkPSJ0ZXh0MzM0MCIKICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZTo0MHB4O2xpbmUtaGVpZ2h0OjEyNSU7Zm9udC1mYW1pbHk6Rm9udEF3ZXNvbWU7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpGb250QXdlc29tZTtsZXR0ZXItc3BhY2luZzowcHg7d29yZC1zcGFjaW5nOjBweDtmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2Utb3BhY2l0eToxIj4KICAgICAgPHBhdGgKICAgICAgICAgaWQ9InBhdGgzMzQ1IgogICAgICAgICBzdHlsZT0iZmlsbDojMzMzMzMzO2ZpbGwtb3BhY2l0eToxIgogICAgICAgICBkPSJtIDIzNy41NjY5Niw0MTMuMjU1MDcgYyAwLjU1ODA0LC0wLjU1ODA0IDAuNTU4MDQsLTEuNDczMjIgMCwtMi4wMzEyNSBsIC0zLjcwNTM1LC0zLjY4MzA0IGMgLTAuNTU4MDQsLTAuNTU4MDQgLTEuNDUwOSwtMC41NTgwNCAtMi4wMDg5MywwIEwgMjIwLDQxOS4zOTM0NiAyMDguMTQ3MzIsNDA3LjU0MDc4IGMgLTAuNTU4MDMsLTAuNTU4MDQgLTEuNDUwODksLTAuNTU4MDQgLTIuMDA4OTMsMCBsIC0zLjcwNTM1LDMuNjgzMDQgYyAtMC41NTgwNCwwLjU1ODAzIC0wLjU1ODA0LDEuNDczMjEgMCwyLjAzMTI1IGwgMTYuNTYyNSwxNi41NDAxNyBjIDAuNTU4MDMsMC41NTgwNCAxLjQ1MDg5LDAuNTU4MDQgMi4wMDg5MiwwIGwgMTYuNTYyNSwtMTYuNTQwMTcgeiIgLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=");
+
+}
+.contact-form .title-form {
+    color: #0E1013;
+    font-size: 32px;
+    font-family: "Bebas Bold";
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0 0 38px;
+}
+.contact-form .subtitle-form {
+    color: #121212;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 29px;
+}
+.contact-form .btn {
+    text-transform: none;
+    background-color:#E88140;
+    color: #fff;
+    font-size: 18px;
+    padding: 16px 32px;
+    letter-spacing: 1px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 100px;
+    border: none;
+    box-shadow: none;
+    margin-top: 30px;
+}
+.contact-form .btn:focus,
+.contact-form .btn:active {
+    outline: none;
+}
+.contact-form .btn:hover {
+    opacity: 0.75;
+}
+.contact-form .form-group {
+    margin-bottom: 17px;
+    position: relative;
+}
+.contact-form label {
+    font-family: "Montserrat-Semibold";
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    font-size: 16px;
+    padding: 13.5px 20px;
+    line-height: 1;
+    border-radius: 8px;
+}
+.contact-form .small-text {
+    font-size: 12px;
+}
+.contact-form select {
+    color: #183B56;
+    padding: 15px 20px;
+}
+.contact-form input.error {
+    border-color: rgb(255, 0, 0);
+}
+.contact-form .form-control,
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+.validation_text {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 12px;
+}
+.contact-form .col-md-6 .validation_text {
+    right: 20px;
+}
+
+/* What are you waiting for */
+
+.waiting-wrap.oblique {
+    position: relative;
+    padding: 163px 0 96px;
+    background-color: #e88140;
+    margin-top: 0px;
+}
+.waiting-wrap .waiting-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%
+}
+.waiting-wrap .title {
+    font-family: "Bebas bold";
+    color: #fff;
+    font-size: 64px;
+    letter-spacing: 1.3px;
+    line-height: 1;
+}
+.waiting-wrap .btn-black {
+    background-color: #272c30;
+    border: 1px solid #272c30;
+    border-radius: 100px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: Montserrat-Regular, sans-serif;
+    transition: all .25s;
+    padding: 16px 70px;
+    margin: 22px 0 0;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.waiting-wrap .btn-black:hover {
+    background-color: #e88140;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.waiting-wrap .download-wrap {
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 320px;
+    margin-top: 39px;
+}
+.waiting-wrap .download-wrap a+a {
+    margin-left: 10px;
+}
+.waiting-wrap .download-title {
+    margin: 0 0 15px;
+    font-family: Montserrat-SemiBold;
+    letter-spacing: 2px;
+}
+.waiting-wrap .txt {
+    font-size: 32px;
+    font-family: "Bebas Thin";
+    color: #fff;
+    letter-spacing: 0.8px;
+}
+
+/* section welcome */
+
+.welcome-section {
+    background: #0E0F12;
+    position: relative;
+    padding: 120px 0 75px;
+}
+.welcome-section:before {
+    content: "";
+    background: url("../images/top-download-img.svg") no-repeat;
+    background-position: right 0 bottom 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+.welcome-section .content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.checkmark-ico {
+    max-width: 75px;
+}
+.welcome-section .section-title {
+    font-size: 56px;
+    color: #fff;
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+}
+.welcome-section .about {
+    font-size: 16px;
+    line-height: 1.25;
+    color: #fff;
+    margin-bottom: 38px;
+}
+.welcome-section .download-buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 388px;
+    margin: 0 auto;
+}
+.welcome-section .download-buttons a.start-btn {
+    background-color: transparent;
+    color: #F5A623;
+    border: 2px solid #F5A623;
+}
+.welcome-section .download-buttons a.start-btn svg {
+    fill: #F5A623;
+}
+.welcome-section .download-buttons a.start-btn:hover {
+    color: #272c30;
+}
+.welcome-section .download-buttons a.start-btn:hover svg {
+    fill: #272c30;
+}
+.welcome-section .download-buttons a {
+    background-color: #fff;
+    color: #272c30;
+    width: 100%;
+    font-family: Montserrat-Bold;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    padding: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    cursor: pointer;
+}
+.welcome-section .download-buttons a:hover {
+    background-color: #F5A623;
+}
+.welcome-section .download-buttons a svg {
+    margin-right: 14px;
+}
+
+@media (max-width:480px) {
+    .waiting-wrap .title {
+        font-size: 44px;
+    }
+}
+@media (max-width:767px) {
+    .waiting-wrap .title {
+        font-size: 52px;
+    }
+    .waiting-wrap .txt {
+        font-size: 14px;
+    }
+    .waiting-wrap .waiting-container a.btn {
+        width: 276px;
+    }
+    .waiting-wrap .download-wrap {
+        flex-wrap: nowrap;
+        align-items: center;
+        flex-direction: column;
+    }
+    .waiting-wrap .download-wrap a+a {
+        margin-left: 0;
+        width: 150px;
+        margin-top: 4px;
+    }
+    .waiting-wrap .download-wrap a img {
+        width: 100%
+    }
+    .waiting-wrap.oblique {
+        padding: 100px 0 65px;
+    }
+    .music-experience .inner-wrap div:nth-child(1n) {
+        order: 1;
+    }
+    .music-experience .inner-wrap div:nth-child(2n) {
+        order: 2;
+    }
+    .music-experience .inner-wrap div:nth-child(3n) {
+        order: 4;
+    }
+    .music-experience .inner-wrap div:nth-child(4n) {
+        order: 3;
+    }
+    .music-experience .inner-wrap div:nth-child(5n) {
+        order: 5;
+    }
+    .music-experience .inner-wrap div:nth-child(6n) {
+        order: 6;
+    }
+}
+@media (max-width:991px) {
+    .waiting-wrap .title {
+        font-size: 58px;
+    }
+    .waiting-wrap .content-wrap {
+        text-align: center;
+    }
+    .waiting-wrap .content-wrap .txt {
+        margin: 0 auto 20px;
+    }
+    .waiting-wrap .content-wrap .btn {
+        margin: 22px auto 0;
+    }
+}
+@media (max-width:1200px) {
+    .waiting-wrap .waiting-container {
+        text-align: center;
+    }
+    .waiting-wrap .waiting-container .txt {
+        margin: auto;
+    }
+    .waiting-wrap .waiting-container a.btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* min-width */
+
+@media (min-width: 576px) {
+    .media .hero::before {
+        background-position: 40px 0;
+        background-size: auto;
+    }
+    .media .hero {
+        padding: 250px 0 370px;
+    }
+    .media .hero::after {
+        transform: rotate(-7.6deg);
+    }
+    .media .section-title {
+        font-size: 56px;
+    }
+}
+
+@media (min-width: 768px) {
+    .gyms-studios .section-title {
+        font-size: 48px;
+        text-align: left;
+    }
+    .gyms-studios .about {
+        font-size: 16px;
+    }
+    .hero-wrap {
+        padding-top: 289px;
+    }
+    .gyms-studios .section-hero .section-title {
+        font-size: 100px;
+        max-width: 450px;
+        margin: 0;
+        text-align: left;
+    }
+    .additional-services .fitRadioBlock .section-title,
+    .forgymsTrainers .forgymsTrainersBlock .section-title {
+        font-size: 56px;
+    }
+    .gyms-studios .section-hero .section-subtitle {
+        text-align: left;
+    }
+    .upgrade-wrap .pricing-item .item-price {
+        font-size: 55px;
+    }
+    .upgrade-wrap .pricing-item .item-price .digit {
+        font-size: 96px;
+    }
+    .upgrade-wrap .pricing-item-wrap {
+        margin: 0;
+    }
+    .gyms-studios .forgymsTrainers {
+        padding-bottom: 145px;
+    }
+    .gyms-studios .forgymsTrainers .forgymsTrainersBlock {
+        padding: 250px 0 120px;
+        align-items: center;
+    }
+    .forgymsTrainers::before {
+        height: calc(100% - 280px);
+        top: 125px;
+    }
+    .additional-services .fitRadioBlock .fitRadioText {
+        margin-right: 70px;
+    }
+    .additional-services .fitRadioBlock .fitRadioText .about {
+        text-align: left;
+    }
+    .gyms-studios .experience-section .about {
+        margin: 0 auto 67px;
+    }
+    .gyms-studios .title-item + .about {
+        margin: 0;
+    }
+    .music-experience {
+        padding: 120px 0 72px;
+    }
+    .music-experience .inner-wrap {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 90px;
+    }
+    .gyms-studios .music-experience .section-subtitle + .section-title {
+        margin-bottom: 75px;
+    }
+    .gyms-studios .inner-wrap .section-title {
+        text-align: left;
+    }
+    .contact-form {
+        padding: 37px 32px 24px;
+    }
+    .royalties-solution {
+        padding: 291px 0 35px;
+    }
+    .royalties-solution::before {
+        top: 167px
+    }
+    .royalties-solution .row-item {
+        padding: 80px 0;
+    }
+    .royalties-solution .section-title {
+        font-size: 56px;
+        text-align: left;
+    }
+    .royalties-solution .about {
+        font-size: 18px;
+        padding-top: 30px;
+        padding-left: 72px;
+        text-align: left;
+    }
+    .royalties-solution .section-subtitle {
+        text-align: left;
+    }
+    .royalties-solution .btn {
+        margin: 24px auto 0 0;
+    }
+    .forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText .section-subtitle {
+        justify-content: flex-start;
+    }
+    .forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText {
+        text-align: left;
+        margin-left: 40px;
+    }
+    .music-experience .about-wrap {
+        text-align: left;
+    }
+    .music-experience .inner-wrap div:nth-child(4n-2) {
+        padding-left: 46px;
+    }
+    .music-experience .inner-wrap .btn {
+        margin: 0;
+    }
+    .faq-wrap .head-holder {
+        margin: 0 auto 62px;
+    }
+    .testimonials-section .slick-slide { 
+        margin: 0 15px;
+    }
+    .faq-wrap {
+        padding: 80px 0 140px;
+    }
+
+    .welcome-section {
+        padding: 218px 0 134px;
+    }
+    .checkmark-ico {
+        max-width: 124px;
+    }
+    .welcome-section .section-title {
+        font-size: 120px;
+        margin: 34px 0 22px;
+        line-height: .9;
+    }
+}
+
+@media (min-width: 992px) {
+    .gyms-studios .section-title {
+        font-size: 56px;
+    }
+    .additional-services .fitRadioBlock .section-title,
+    .forgymsTrainers .forgymsTrainersBlock .section-title {
+        font-size: 80px;
+    }
+    .media .hero {
+        padding: 250px 0 350px;
+        margin-bottom: 60px;
+    }
+    .media .title {
+        font-size: 120px;
+    }
+    .media .sub-title {
+        font-size: 32px;
+        letter-spacing: 5px;
+        margin-bottom: 0;
+    }
+    .media .design-resources .description-wrap {
+        padding: 20px 0 20px 4rem;
+    }
+    .design-resources .section-subtitle {
+        margin-bottom: 115px;
+    }
+    .media .item-resources {
+        margin-bottom: 100px;
+    }
+    .media .questions-comments .inner-container {
+        padding: 85px 0 60px;
+    }
+    .experience-section {
+        padding: 162px 0 122px;
+    }
+    .music-experience {
+        padding: 230px 0 72px;
+    }
+    .music-experience .inner-wrap {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 170px;
+    }
+    .gyms-studios .music-experience .section-subtitle + .section-title {
+        max-width: 650px;
+        margin-bottom: 153px;
+    }
+    .waiting-wrap .waiting-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .testimonials-section {
+        padding: 190px 0 0;
+    }
+    .gyms-studios .testimonials-section .section-title {
+        margin-bottom: 87px;
+    }
+    .testimonials-section .slick-dots {
+        padding: 90px 0 0;
+    }
+}
+@media (min-width:1200px) {
+    .gyms-studios .section-hero .section-title {
+        font-size: 136px;
+        line-height: .9;
+    }
+    .upgrade-wrap .pricing-item-wrap {
+        padding: 50px 76px 64px;
+    }
+    .additional-services .fitRadioBlock .fitRadioText {
+        max-width: 574px;
+        margin-right: 126px;
+    }
+    .contact-wrap {
+        padding: 47px 0 50px;
+    }
+    .gyms-studios .forgymsTrainers .forgymsTrainersBlock .forgymsTrainersText {
+        padding-top: 70px;
+        max-width: 574px;
+        margin-left: 140px;
+    }
+    .testimonials-section .slick-slide { 
+        margin: 0 48px;
+    }
+}
+@media (min-width:2200px) {
+	.fitRadio .fitRadioBlock .fitRadioText  {
+        padding:  250px 0 0;
+    }
+}
+@media (min-width:2500px) {
+	.fitRadio .fitRadioBlock .fitRadioText  {
+        padding:  300px 0 0;
+    }
+    .section-hero::before {
+        transform: skewY(3deg);
+        top: calc(100% - 70px);
+    }
+}
+@media (max-width:1199px) {
+	.forgymsTrainers .video-thumb  {
+        margin-left:  -65%;
+        margin-right:  15%;
+        box-shadow:  0px 30px 45px rgb(164 164 164 / 25%);
+    }
+	.modal-video iframe  {
+        width:  560px;
+        height:  315px;
+    }
+}
+@media (max-width:768px) {
+	.fitRadio .fitRadioBlock .fitRadioText  {
+        padding:  50px 0 0;
+    }
+	.forgymsTrainers .video-thumb  {
+        margin:  55px 0 0;
+    }
+	.modal-video iframe  {
+        width:  100%;
+    }
+}
